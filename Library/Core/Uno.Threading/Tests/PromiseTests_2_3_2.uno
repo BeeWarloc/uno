@@ -63,7 +63,7 @@ namespace ThreadingTests
             promise = promise.Then(OnBaseFulfilled) as Promise<int>;
             _rejectReason = new DummyException("Rejected");
             promise.Reject(_rejectReason);
-            promise.Then(null, OnRejectedWithTheSameValue);
+            promise.Then((Action)null, OnRejectedWithTheSameValue);
         }
 
         [Test]
@@ -72,7 +72,7 @@ namespace ThreadingTests
             var promise = new Promise<int>();
             promise.Resolve(default(int));
             promise = promise.Then(OnBaseFulfilled) as Promise<int>;
-            promise.Then(null, OnRejectedWithTheSameValue);
+            promise.Then((Action)null, OnRejectedWithTheSameValue);
             _rejectReason = new DummyException("Rejected");
             promise.Reject(_rejectReason);
         }

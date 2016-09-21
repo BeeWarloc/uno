@@ -1,8 +1,4 @@
-using Uno;
-using Uno.Collections;
-using Uno.Compiler.ExportTargetInterop;
-
-namespace Uno.Threading
+﻿namespace Uno.Threading
 {
     public enum FutureState
     {
